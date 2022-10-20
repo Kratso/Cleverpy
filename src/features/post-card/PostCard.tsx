@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import { useDispatch } from "react-redux";
 
-import { useAppSelector, useAppDispatch } from '../../store/hooks';
-import { Post } from "../../store/postsSlice";
-import { selectUserById, User } from "../../store/usersSlice";
+import { AppDispatch } from "../../store/store";
+import { useAppSelector } from '../../store/hooks';
+import { selectUserById, User } from "../post-feed/usersSlice";
+import { postDelete } from "../post-feed/postsSlice";
 
 import './PostCard.css';
 
@@ -15,6 +17,8 @@ interface IProps {
 }
 
 export const PostCard: React.FC<IProps> = ({id, userId, body, title} ) => {
+    const dispatch = useDispatch<AppDispatch>();
+
     const [isUpdating, toggleIsUpdating] = useState<boolean>(false);
 
     const user : User = useAppSelector<User>(state => selectUserById(state,userId));
@@ -23,10 +27,14 @@ export const PostCard: React.FC<IProps> = ({id, userId, body, title} ) => {
 
     }, [id, userId, title, body]);
 
+    const onClickDelete = () => {
+        dispatch(postDelete({id}))
+    } 
+
     return (
         <div id={`${id}`} className="card">
             <div className="card-banner">
-                <p className="category-tag popular"><FaEdit /></p>
+                <p className="action-buttons"><FaEdit /><FaTrashAlt onClick={onClickDelete} /></p>
             </div>
 
             <div className="card-body">

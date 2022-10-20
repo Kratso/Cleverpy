@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
-import { RootState, AppThunk } from "./store";
+import { RootState, AppThunk } from "../../store/store";
 
 export interface Post {
   userId: number;
@@ -32,7 +32,7 @@ const postsSlice = createSlice({
   name: "posts",
   initialState,
   reducers: {
-    postUpdated(state, action) {
+    postUpdate(state, action) {
       const {id, title, body} = action.payload;
 
       const existingPost = state.posts.find(post => post.id === id)
@@ -42,13 +42,11 @@ const postsSlice = createSlice({
         existingPost.body = body;
       }
     },
-    postDeleted(state, action) {
+    postDelete(state, action) {
       const { id } = action.payload;
-
       state.posts.forEach( (item, index) => {
         if(item.id === id) state.posts.splice(index, 1);
-      })
-      
+      })      
     }
   },
   extraReducers(builder) {
@@ -60,6 +58,9 @@ const postsSlice = createSlice({
           state.status.status = 'OK'
           // Add any fetched posts to the array
           state.posts = state.posts.concat(action.payload)
+
+          //filter duplicate ids
+          state.posts = state.posts.filter((v,i,a)=>a.findIndex(v2=>(v2.id===v.id))===i)
         })
         .addCase(fetchPosts.rejected, (state, action) => {
           state.status.status = 'KO'
@@ -68,16 +69,11 @@ const postsSlice = createSlice({
   }
 });
 
-export const { postUpdated, postDeleted } = postsSlice.actions;
+export const { postUpdate, postDelete } = postsSlice.actions;
 
 export default postsSlice.reducer;
 
-// All posts are shuffled because I was losing my mind looking at the same 3 posts everytime, even if they are Lorem Ipsum.
-export const selectAllPosts = (state: RootState) => {
-  const shuffledArray = [...state.posts.posts].sort(() => (0.5 - Math.random()))
-
-  return shuffledArray;
-};
+export const selectAllPosts: (state: RootState)=>Post[] = (state: RootState) => state.posts.posts;
 
 export const selectPostById = (state: RootState, postId: number) =>
   state.posts.posts.find((post: Post) => post.id === postId);

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { BarLoader } from "react-spinners";
 
-import { selectAllPosts, fetchPosts, PostsStatus } from "../../store/postsSlice";
+import { selectAllPosts, fetchPosts, PostsStatus } from "./postsSlice";
 import { AppDispatch, RootState } from "../../store/store";
 import { PostCard } from "../post-card/PostCard";
 

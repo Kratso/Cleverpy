@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { use } from "i18next";
 
-import { RootState, AppThunk } from "./store";
+import { RootState, AppThunk } from "../../store/store";
 
 export interface User {
   id: number;

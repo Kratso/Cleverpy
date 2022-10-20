@@ -1,7 +1,3 @@
-body {
-  margin: 2rem;
-  color: #414b56; }
-
 .wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -28,7 +24,7 @@ body {
   transform: scale(1.05);
   box-shadow: 0px 2px 40px #d7dfe2; }
 
-.category-tag {
+.action-buttons {
   font-size: 0.8rem;
   font-weight: bold;
   color: white;
@@ -39,24 +35,17 @@ body {
   z-index: 1;
   top: 1rem;
   border-radius: 0 2rem 2rem 0; }
+  .action-buttons *:first-child {
+    margin-right: 10px; }
 
-/* Design of # tags, heading, description starts from here */
 .card-body {
   margin: 4rem 1rem 1rem 1rem; }
 
-/* #tags design */
-.blog-hashtag {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #4d97b2; }
-
-/* heading design */
-.blog-title {
+.card-title {
   line-height: 1.5rem;
   margin: 1rem 0 0.5rem; }
 
-/* description design */
-.blog-description {
+.card-description {
   color: #616b74;
   font-size: 0.9rem; }
 
@@ -75,11 +64,9 @@ body {
 .card-profile-info {
   margin-left: 1rem; }
 
-/* profile name */
 .profile-name {
   font-size: 1rem; }
 
-/*Profile followers */
 .profile-followers {
   color: #616b74;
-  font-size: 0.9rem; }
+  font-size: 0.8rem; }

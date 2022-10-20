@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './resources/logo.svg';
 import './App.css';
 import { PostsFeed } from '../features/post-feed/PostFeed';
 

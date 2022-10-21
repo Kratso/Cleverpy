@@ -6,6 +6,8 @@ import { selectAllPosts, fetchPosts, PostsStatus } from "./postsSlice";
 import { AppDispatch, RootState } from "../../store/store";
 import { PostCard } from "../post-card/PostCard";
 
+import './PostFeed.css';
+
 export const PostsFeed = () => {
   const dispatch = useDispatch<AppDispatch>();
   const posts = useSelector(selectAllPosts);

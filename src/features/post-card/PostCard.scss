@@ -9,7 +9,6 @@ $font-family: "Inter", sans-serif;
 .card {
   box-sizing: border-box;
   font-family: $font-family;
-  margin: 0;
   padding: 0;
   overflow: hidden;
   box-shadow: 0px 2px 20px #d7dfe2; /* Card outline shadow */
@@ -20,11 +19,6 @@ $font-family: "Inter", sans-serif;
   margin: 1rem;
   transition: 250ms all ease-in-out;
   cursor: pointer;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 2px 40px #d7dfe2;
 }
 
 .action-buttons {
@@ -62,13 +56,6 @@ $font-family: "Inter", sans-serif;
   display: flex;
   margin-top: 2rem;
   align-items: center;
-}
-
-.profile-img {
-  width: 60px; /* image width */
-  height: 60px;
-  object-fit: cover;
-  border-radius: 50%;
 }
 
 .card-profile-info {

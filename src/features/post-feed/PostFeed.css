@@ -1,0 +1,5 @@
+.post-feed-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: fit-content; }

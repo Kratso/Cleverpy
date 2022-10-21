@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/Kratso/Cleverpy/compare/v0.1.2...v0.1.3) (2022-10-21)
+
+
+### Features
+
+* 🎸 added responsive css and localization ([90acada](https://github.com/Kratso/Cleverpy/commit/90acadadc32e0b95fda1eff3dd5afe934e19ec92))
+
 ### [0.1.2](https://github.com/Kratso/Cleverpy/compare/v0.1.1...v0.1.2) (2022-10-20)
 
 

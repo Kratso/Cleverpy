@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/Kratso/Cleverpy/compare/v0.1.3...v0.1.4) (2022-10-24)
+
+
+### Features
+
+* 🎸 Added (faux)Login capabilities ([e6c8ad1](https://github.com/Kratso/Cleverpy/commit/e6c8ad19d7a7bdfa4898d13bd45ec66cf6199213))
+
 ### [0.1.3](https://github.com/Kratso/Cleverpy/compare/v0.1.2...v0.1.3) (2022-10-21)
 
 

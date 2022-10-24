@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 import { AppDispatch } from "../../store/store";
 import { useAppSelector } from '../../store/hooks';
-import { selectUserById, User } from "../post-feed/usersSlice";
+import { selectUserById, User } from "../login/usersSlice";
 import { postDelete } from "../post-feed/postsSlice";
 
 import './PostCard.css';

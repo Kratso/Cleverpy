@@ -13,6 +13,14 @@ export const es = {
     about: "Sobre nosotros",
     language: "Lenguaje",
   },
+  [namespaces.login.login]: {
+    short: 'Demasiado Corto',
+    long: 'Demasiado Largo',
+    required: 'Campo Requerido',
+    h1: '¡Esa Página!',
+    h2: 'Conéctate',
+    submit: 'Login',
+  }
 };
 
 export const en = {
@@ -28,4 +36,13 @@ export const en = {
     about: "About",
     language: "Language",
   },
+  [namespaces.login.login]: {
+    short: 'Too short!',
+    long: 'Way too long',
+    required: 'Required Field',
+    h1: 'That One Page!',
+    h2: 'Login',
+    submit: 'Login',
+
+  }
 };

@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
+import fetchPostsService from "../../services/posts/post.service";
 
 import { RootState, AppThunk } from "../../store/store";
 
@@ -79,6 +80,6 @@ export const selectPostById = (state: RootState, postId: number) =>
   state.posts.posts.find((post: Post) => post.id === postId);
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-  const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
+  const response = await fetchPostsService();
   return response.data as Post[]
 })

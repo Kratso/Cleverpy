@@ -1,6 +1,9 @@
 export const namespaces = {
     main: {
-      main: "main"
+      main: "main",
+    },
+    login: {
+      login: "login",
     },
   };
   

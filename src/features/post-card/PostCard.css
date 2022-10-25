@@ -30,9 +30,8 @@
   z-index: 1;
   top: 1rem;
   border-radius: 0 2rem 2rem 0; }
-
-.action-buttons *:first-child {
-  margin-right: 10px; }
+  .action-buttons *:first-child {
+    margin-right: 10px; }
 
 .card-body {
   margin: 4rem 1rem 1rem 1rem; }
@@ -76,47 +75,42 @@
   border-radius: 2px;
   padding: 1.4rem 2rem 1.6rem;
   background: rgba(57, 63, 84, 0.8); }
-
-.webflow-style-input:after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: 999;
-  height: 2px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  background-position: 0% 0%;
-  background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6);
-  background-size: 500% auto;
-  animation: gradient 3s linear infinite; }
-
-.webflow-style-input input {
-  flex-grow: 1;
-  color: #bfd2ff;
-  background-color: #333;
-  font-size: 1rem;
-  line-height: 1.4rem;
-  vertical-align: middle;
-  width: 100%; }
-
-.webflow-style-input input::-webkit-input-placeholder {
-  color: #7881a1; }
-
-.webflow-style-input button {
-  color: #7881a1;
-  font-size: 1.4rem;
-  line-height: 1.4rem;
-  vertical-align: middle;
-  transition: color 0.25s;
-  padding: 0;
-  background: none;
-  border: none;
-  outline: none; }
-
-.webflow-style-input button:hover {
-  color: #bfd2ff; }
+  .webflow-style-input:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: 0% 0%;
+    background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6);
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite; }
+  .webflow-style-input input {
+    flex-grow: 1;
+    color: #bfd2ff;
+    background-color: #333;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    vertical-align: middle;
+    width: 100%; }
+    .webflow-style-input input::-webkit-input-placeholder {
+      color: #7881a1; }
+  .webflow-style-input button {
+    color: #7881a1;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    vertical-align: middle;
+    transition: color 0.25s;
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none; }
+    .webflow-style-input button:hover {
+      color: #bfd2ff; }
 
 textarea {
   height: 200px !important;

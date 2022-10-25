@@ -8,10 +8,10 @@ body {
   grid-template-areas: "header header header" "sidebar main main"; }
 
 .header {
-  background-color: green;
+  background-color: #333;
   grid-area: header;
   width: 100vw;
-  color: whitesmoke;
+  color: #2196f3;
   text-align: center;
   height: 200px; }
   .header * {
@@ -40,7 +40,7 @@ body {
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: green;
+  background-color: #333;
   height: 100%;
   overflow: auto;
   grid-area: sidebar;
@@ -52,8 +52,8 @@ body {
     padding: 16px;
     text-decoration: none; }
     .sidebar a.active {
-      background-color: #04aa6d;
-      color: white; }
+      background-color: rgba(57, 63, 84, 0.8);
+      color: #2196f3; }
     .sidebar a:hover:not(.active) {
       background-color: #555;
       color: white; }
@@ -81,7 +81,7 @@ body {
     width: 100%;
     height: 50px;
     position: fixed;
-    background-color: green;
+    background-color: #333;
     overflow: auto;
     grid-area: sidebar;
     flex-direction: row; }

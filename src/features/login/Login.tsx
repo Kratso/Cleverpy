@@ -46,7 +46,7 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h1>{t("h1")}</h1>
       <h2>{t("h2")}</h2>
       <Formik

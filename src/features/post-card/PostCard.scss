@@ -130,6 +130,7 @@ $input-text-active: #bfd2ff;
     font-size: 1rem;
     line-height: 1.4rem;
     vertical-align: middle;
+    width: 100%;
     &::-webkit-input-placeholder {
       color: $input-text-inactive;
     }

@@ -5,6 +5,9 @@ export const namespaces = {
     login: {
       login: "login",
     },
+    card: {
+      card: "card",
+    },
   };
   
   export const languages = {

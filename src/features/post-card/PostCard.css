@@ -4,14 +4,14 @@
   justify-content: center; }
 
 .card {
+  background-color: #333;
+  color: #2196f3;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", "Inter", sans-serif;
   padding: 0;
   overflow: hidden;
   box-shadow: 0px 2px 20px #d7dfe2;
   /* Card outline shadow */
-  background: white;
-  /* post background color */
   border-radius: 0.5rem;
   position: relative;
   width: 350px;
@@ -41,7 +41,7 @@
   margin: 1rem 0 0.5rem; }
 
 .card-description {
-  color: #616b74;
+  color: #2196f3;
   font-size: 0.9rem; }
 
 .card-profile {
@@ -58,3 +58,61 @@
 .profile-followers {
   color: #616b74;
   font-size: 0.8rem; }
+
+@keyframes gradient {
+  0% {
+    background-position: 0 0; }
+  100% {
+    background-position: 100% 0; } }
+
+.webflow-style-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 1.4rem 2rem 1.6rem;
+  background: rgba(57, 63, 84, 0.8); }
+  .webflow-style-input:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: 0% 0%;
+    background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6);
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite; }
+  .webflow-style-input input {
+    flex-grow: 1;
+    color: #bfd2ff;
+    background-color: #333;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    vertical-align: middle; }
+    .webflow-style-input input::-webkit-input-placeholder {
+      color: #7881a1; }
+  .webflow-style-input button {
+    color: #7881a1;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    vertical-align: middle;
+    transition: color 0.25s;
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none; }
+    .webflow-style-input button:hover {
+      color: #bfd2ff; }
+
+textarea {
+  height: 200px !important;
+  width: 100%;
+  color: #bfd2ff;
+  background-color: #333; }

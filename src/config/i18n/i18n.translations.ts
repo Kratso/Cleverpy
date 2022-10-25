@@ -20,7 +20,10 @@ export const es = {
     h1: '¡Esa Página!',
     h2: 'Conéctate',
     submit: 'Login',
-  }
+  },
+  [namespaces.card.card]: {
+    submit: "Confirmar"
+  },
 };
 
 export const en = {
@@ -43,6 +46,8 @@ export const en = {
     h1: 'That One Page!',
     h2: 'Login',
     submit: 'Login',
-
-  }
+  },
+  [namespaces.card.card]: {
+    submit: "Submit"
+  },
 };

@@ -3,52 +3,103 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 
 import { AppDispatch } from "../../store/store";
-import { useAppSelector } from '../../store/hooks';
+import { useAppSelector } from "../../store/hooks";
 import { selectUserById, User } from "../login/usersSlice";
-import { postDelete } from "../post-feed/postsSlice";
+import { postDelete, postUpdate } from "../post-feed/postsSlice";
 
-import './PostCard.css';
+import "./PostCard.css";
+import { Field, Form, Formik } from "formik";
+import { useTranslation } from "react-i18next";
+import { namespaces } from "../../config/i18n/i18n.constants";
 
 interface IProps {
-    id: number, 
-    userId: number, 
-    body: string, 
-    title: string
+  id: number;
+  userId: number;
+  body: string;
+  title: string;
 }
 
-export const PostCard: React.FC<IProps> = ({id, userId, body, title} ) => {
-    const dispatch = useDispatch<AppDispatch>();
+export const PostCard: React.FC<IProps> = ({ id, userId, body, title }) => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { t } = useTranslation(namespaces.card.card);
 
-    const [isUpdating, toggleIsUpdating] = useState<boolean>(false);
 
-    const user : User = useAppSelector<User>(state => selectUserById(state,userId));
-    
-    useEffect(()=>{
+  const [isUpdating, toggleIsUpdating] = useState<boolean>(false);
 
-    }, [id, userId, title, body]);
+  const user: User = useAppSelector<User>((state) =>
+    selectUserById(state, userId)
+  );
+  useEffect(()=>{
+    toggleIsUpdating(false)
+  }, [id])
 
-    const onClickDelete = () => {
-        dispatch(postDelete({id}))
-    } 
+  const onClickDelete = () => {
+    dispatch(postDelete({ id }));
+  };
+  const onClickUpdate = () => {
+      if(!isUpdating)   toggleIsUpdating(true);
+  };
 
-    return (
-        <div id={`${id}`} className="card">
-            <div className="card-banner">
-                <p className="action-buttons"><FaEdit /><FaTrashAlt onClick={onClickDelete} /></p>
-            </div>
+  const submitForm= ({title, body}: {title: string, body: string}) => {
+      dispatch(postUpdate({
+          id,
+          title,
+          body
+      }))
+      toggleIsUpdating(false)
+  }
 
-            <div className="card-body">
-                <h2 className="card-title">{title}</h2>
-                <p className="card-description">{body}</p>
+  return (
+    <div id={`${id}`} className="card">
+      <div className="card-banner">
+        <p className="action-buttons">
+          <FaEdit onClick={onClickUpdate} />
+          <FaTrashAlt onClick={onClickDelete} />
+        </p>
+      </div>
 
-                <div className="card-profile">
-                <div className="card-profile-info">
-                    <h3 className="profile-name">{user.name }</h3>
-                    <p className="profile-followers">{user.followers} followers</p>
+      <div className="card-body">
+        {isUpdating ? (
+          <Formik
+            initialValues={{
+              title,
+              body,
+            }}
+            onSubmit={submitForm}
+          >
+            {() => (
+              <Form>
+                <div className="webflow-style-input">
+                  <Field
+                    name="title"
+                    className="input"
+                    type="text"
+                    placeholder=" "
+                  />
                 </div>
+                <div className="webflow-style-input">
+                    <Field name="body" as="textarea"/>
                 </div>
+                <div className="webflow-style-input">
+                    <button type="submit">{t("submit")}</button>
+                </div>
+              </Form>
+            )}
+          </Formik>
+        ) : (
+          <div>
+            <h2 className="card-title">{title}</h2>
+            <p className="card-description">{body}</p>
+          </div>
+        )}
 
-            </div>
+        <div className="card-profile">
+          <div className="card-profile-info">
+            <h3 className="profile-name">{user.name}</h3>
+            <p className="profile-followers">{user.followers} followers</p>
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};

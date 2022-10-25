@@ -12,6 +12,8 @@ import authService from "../../services/login/auth.service";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../store/hooks";
 
+import "./Login.css";
+
 export const Login: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { t } = useTranslation(namespaces.login.login);
@@ -22,7 +24,6 @@ export const Login: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    
     if (user.status && user.status.status === "OK") {
       navigate("/");
     }
@@ -40,15 +41,16 @@ export const Login: React.FC = () => {
       .required(t("required")),
   });
 
-  const handleLogin = async (formValue: { username: string; password: string }) => {
+  const handleLogin = async (formValue: {
+    username: string;
+    password: string;
+  }) => {
     const { username, password } = formValue;
     dispatch(login(await authService.login(username, password)));
   };
 
   return (
     <div className="login-container">
-      <h1>{t("h1")}</h1>
-      <h2>{t("h2")}</h2>
       <Formik
         initialValues={{
           username: "",
@@ -60,16 +62,60 @@ export const Login: React.FC = () => {
         }}
       >
         {({ errors, touched }) => (
-          <Form>
-            <Field name="username" />
+          <Form className="form">
+            <div className="control">
+              <h1>{t("h1")}</h1>
+              <h1>{t("h2")}</h1>
+            </div>
+            <div className="control block-cube block-input">
+              <Field
+                name="username"
+                className="control block-cube block-input"
+              />
+              <div className="bg-top">
+                <div className="bg-inner"></div>
+              </div>
+              <div className="bg-right">
+                <div className="bg-inner"></div>
+              </div>
+              <div className="bg">
+                <div className="bg-inner"></div>
+              </div>
+            </div>
             {errors.username && touched.username ? (
               <div>{errors.username}</div>
             ) : null}
-            <Field type="password" name="password" />
+            <div className="control block-cube block-input">
+              <Field
+                type="password"
+                name="password"
+                className="control block-cube block-input"
+              />
+              <div className="bg-top">
+                <div className="bg-inner"></div>
+              </div>
+              <div className="bg-right">
+                <div className="bg-inner"></div>
+              </div>
+              <div className="bg">
+                <div className="bg-inner"></div>
+              </div>
+            </div>
             {errors.password && touched.password ? (
               <div>{errors.password}</div>
             ) : null}
-            <button type="submit">{t("submit")}</button>
+            <button className="btn block-cube block-cube-hover" type="submit">
+              <div className="bg-top">
+                <div className="bg-inner"></div>
+              </div>
+              <div className="bg-right">
+                <div className="bg-inner"></div>
+              </div>
+              <div className="bg">
+                <div className="bg-inner"></div>
+              </div>
+              <div className="text">{t("submit")}</div>
+            </button>
           </Form>
         )}
       </Formik>

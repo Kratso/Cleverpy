@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
+import { Field, Form, Formik } from "formik";
 
 import { AppDispatch } from "../../store/store";
 import { useAppSelector } from "../../store/hooks";
 import { selectUserById, User } from "../login/usersSlice";
 import { postDelete, postUpdate } from "../post-feed/postsSlice";
+import { namespaces } from "../../config/i18n/i18n.constants";
 
 import "./PostCard.css";
-import { Field, Form, Formik } from "formik";
-import { useTranslation } from "react-i18next";
-import { namespaces } from "../../config/i18n/i18n.constants";
 
 interface IProps {
   id: number;
@@ -23,31 +23,32 @@ export const PostCard: React.FC<IProps> = ({ id, userId, body, title }) => {
   const dispatch = useDispatch<AppDispatch>();
   const { t } = useTranslation(namespaces.card.card);
 
-
   const [isUpdating, toggleIsUpdating] = useState<boolean>(false);
 
   const user: User = useAppSelector<User>((state) =>
     selectUserById(state, userId)
   );
-  useEffect(()=>{
-    toggleIsUpdating(false)
-  }, [id])
+  useEffect(() => {
+    toggleIsUpdating(false);
+  }, [id]);
 
   const onClickDelete = () => {
     dispatch(postDelete({ id }));
   };
   const onClickUpdate = () => {
-      if(!isUpdating)   toggleIsUpdating(true);
+    if (!isUpdating) toggleIsUpdating(true);
   };
 
-  const submitForm= ({title, body}: {title: string, body: string}) => {
-      dispatch(postUpdate({
-          id,
-          title,
-          body
-      }))
-      toggleIsUpdating(false)
-  }
+  const submitForm = ({ title, body }: { title: string; body: string }) => {
+    dispatch(
+      postUpdate({
+        id,
+        title,
+        body,
+      })
+    );
+    toggleIsUpdating(false);
+  };
 
   return (
     <div id={`${id}`} className="card">
@@ -78,10 +79,10 @@ export const PostCard: React.FC<IProps> = ({ id, userId, body, title }) => {
                   />
                 </div>
                 <div className="webflow-style-input">
-                    <Field name="body" as="textarea"/>
+                  <Field name="body" as="textarea" />
                 </div>
                 <div className="webflow-style-input">
-                    <button type="submit">{t("submit")}</button>
+                  <button type="submit">{t("submit")}</button>
                 </div>
               </Form>
             )}

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import fetchPostsService from "../../services/posts/post.service";
 
+import fetchPostsService from "../../services/posts/post.service";
 import { RootState } from "../../store/store";
 
 export interface Post {

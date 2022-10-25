@@ -1,7 +1,7 @@
 import React from 'react';
 import i18n from "i18next";
 // might overkill, but f*ck it, redux is overkill too for this.
-import { createBrowserRouter, Route, RouterProvider, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { initReactI18next } from 'react-i18next';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';

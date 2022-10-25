@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 // Absolutely overkill. No one needs these libraries for these yee-yee ass looking app. Nevertheless.
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";

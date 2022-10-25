@@ -1,8 +1,7 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import fetchPostsService from "../../services/posts/post.service";
 
-import { RootState, AppThunk } from "../../store/store";
+import { RootState } from "../../store/store";
 
 export interface Post {
   userId: number;

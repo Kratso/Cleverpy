@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import { RootState, AppThunk } from "../../store/store";
+import { RootState } from "../../store/store";
 import { User } from "./usersSlice";
 
 import AuthService from "../../services/login/auth.service";

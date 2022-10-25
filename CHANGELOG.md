@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/Kratso/Cleverpy/compare/v0.1.4...v0.1.5) (2022-10-25)
+
+
+### Features
+
+* 🎸 added post editing functionality ([6aa2231](https://github.com/Kratso/Cleverpy/commit/6aa22318a506610d4537a0895d044cb836af6775))
+
 ### [0.1.4](https://github.com/Kratso/Cleverpy/compare/v0.1.3...v0.1.4) (2022-10-24)
 
 
